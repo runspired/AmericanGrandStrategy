@@ -151,7 +151,7 @@ module.exports = function (grunt) {
                     'ember-mocha-adapter',
                     'fontawesome',
                     'bootstrap',
-                    'ember-data-shim',
+                    //'ember-data-shim',
                     'moment',
                     // 'ember',
                     // 'ember-data'

@@ -43,7 +43,7 @@ Within `app/package/`
 - `modules/` Contains the `View`, `Route`, and `Controller` for a named Route (defined in `router.js`)
 - `templates/` Contains all `.hbs` files. `-` is replaced with `/` by grunt for use in handlebar's `data-template-name` attribute.
 - `app.js` Contains the build structure (using require.js `require`) for the `T2D_GuidedSetup` application.
-- `text2drive.js` Sets up the named application `T2D_GuidedSetup`.
+- `ags.js` Sets up the named application `T2D_GuidedSetup`.
 - `router.js` Contains all url path configurations for resources and routes.
 - `store.js` Contains all setup and configuration for the local store in use (if there is one).
 

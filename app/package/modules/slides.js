@@ -22,22 +22,14 @@
     });
 
     App.TutorialView = App.View.extend({
-        viewName : 'tutorial',
+        viewName : 'slides',
         classNames : ['signup-container']
     });
 
-    App.TutorialRoute = App.AuthenticatedRoute.extend({
+    App.TutorialRoute = App.Route.extend({
         model : function () {
-            return App.User.create({
-                firstName : 'Chris',
-                lastName : 'Thoburn',
-                email : 'runspired@gmail.com',
-                mobilePhone : '7138983236',
-                workPhone : '7138983236',
-                dealerName : 'Schaumburg Honda',
-                image : ''
-            });
+            return DS.findAll('slide');
         }
     });
 
-}.call(T2D_GuidedSetup));
+}.call(AGS));

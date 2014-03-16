@@ -1,7 +1,13 @@
 /*
- -----------[ API Configuration ]-----------
+ -----------[ REST / Ember-data Configuration ]-----------
  */
 
-/*
-    This project does not require a store currently.
- */
+/*global DS, AGS, Firebase */
+
+//AGS.ApplicationSerializer = DS.RESTSerializer.extend({});
+
+AGS.ApplicationAdapter = DS.FirebaseAdapter.extend({
+    firebase : new Firebase("https://ags.firebaseio.com/")
+});
+
+AGS.ApplicationAdapter.reopen({});

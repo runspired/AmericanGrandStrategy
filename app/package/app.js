@@ -1,9 +1,10 @@
-/*global require, T2D_GuidedSetup */
+/*global require, AGS */
 
-//utility functions are used widely, should be included first
-require('extensions/utils');
+require('external/firebase');
+require('external/emberfire-latest');
+require('external/firebase-simple-login');
 
-require('text2drive');
+require('ags');
 require('router');
 require('store');
 
@@ -15,5 +16,5 @@ require('extensions/selectable');
 
 require('extensions/*');
 
-//signify we're done loading.  deferReadiness() is called in text2drive.js
-T2D_GuidedSetup.advanceReadiness();
+//signify we're done loading.  deferReadiness() is called in ags.js
+AGS.advanceReadiness();
