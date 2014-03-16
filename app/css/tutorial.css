@@ -1,0 +1,380 @@
+/*!
+Tutorial CSS
+
+CSS for Growl, and Selectable ported from previous work
+and will need a slight bit of work to ensure IE8 compatibility (primarily
+in the use of SVG) as well as to fix old image links.
+
+I may switch to the bootstrap version of growl css, as this needs some cleanup
+work on colors regardless.
+
+T2D Red (rgb): 255, 55, 65
+T2D Yellow (rgb) : 242 219 0
+*/
+
+@media all {
+
+    body {
+        background : #ffffff url('../resources/connect/connect.png') top left repeat;
+        font-family: Lato, arial, sans-serif;
+        font-weight: 400;
+    }
+
+    body, h1, h2, h3, h4, p {
+        color: #333;
+    }
+    .progress {
+        background-color: #fbfbfb !important;
+    }
+    .carousel-slide-header, .sidebar-header {
+        background : #ffffff;
+        border-bottom: 1px solid #eee;
+        box-shadow: 0px 0px 5px 0px #ddd;
+        height: 85px;
+    }
+    .sidebar-header {
+        text-align: center;
+    }
+    .carousel-slide-header, .sidebar-header, .carousel {
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .progress-bar-t2d-red {
+        background-color: rgba(255, 55, 65, 0.25) !important;
+    }
+    .progress-bar-t2d-yellow {
+        background-color: rgba(255, 245, 0, 0.25) !important;
+        color: #999 !important;
+        font-weight: 500;
+    }
+    .logoImg {
+        height: 50px;
+    }
+    .inlineLogo {
+        height: 1.25em;
+        margin: 0 5px;
+        display: inline-block;
+    }
+    .logoText {
+        width: 100%;
+        position: relative;
+        display: block;
+        font-weight: 500;
+        font-size: 18px;
+        letter-spacing: 3px;
+    }
+    .giantActionButton {
+        font-size: 30px;
+        font-weight: 300;
+    }
+    .backButton {
+        border-radius: 0px;
+        padding-left: 25px;
+        font-weight: 300;
+        font-size: 18px;
+        color: #bbb;
+        background-color: #f5f5f5;
+        background-image: url('../resources/harshLeft.png');
+        background-repeat: no-repeat;
+        background-size: 15px 15px;
+        background-position: left center;
+        border: 1px solid #f0f0f0;
+        border-top: none;
+    }
+    .backButton:hover, .backButton:focus, .backButton:active {
+        background-color: #f0f0f0;
+        border-color: #e8e8e8;
+        color: #aaaaaa;
+    }
+    .continueButton {
+        font-size: 20px;
+        font-weight: 300;
+        border-radius: 3px;
+        padding-right: 35px;
+        background-image: url('../resources/harshRight.png');
+        background-repeat: no-repeat;
+        background-size: 20px 20px;
+        background-position: right center;
+    }
+    .blue-button {
+        background-color: rgb(96, 112, 135);
+        border: 1px solid rgb(86, 100, 120);
+    }
+    .blue-button:hover, .blue-button:focus, .blue-button:active {
+        background-color: rgb(86, 100, 120);
+        border-color: rgb(76, 90, 110);
+    }
+    .blue-text {
+        color: rgb(96, 112, 135);
+    }
+    .drop-top {
+        box-shadow: 0px 4px 10px 0px #000;
+        border-top: 1px solid #eee;
+    }
+    .live-support-button {
+        font-size: 24px;
+        font-weight: 400;
+        padding: 15px 65px 15px 20px;
+        border-radius: 8px;
+        text-shadow: 1px 1px 1px #53b56a;
+        border: 2px solid #69bf7d;
+        background: #7ec88f url('../resources/chat.png') right center no-repeat;
+    }
+    .live-support-button:hover, .live-support-button:focus, .live-support-button:active {
+        background: #53b56a url('../resources/chat.png') right center no-repeat;
+        border-color: #69bf7d;
+    }
+
+    .top-buffer { margin-top: 45px; }
+    .bottom-buffer { margin-bottom: 45px; }
+
+    .mainPointImage {
+        height: 60px;
+    }
+    .bg-fill-lightgrey {
+        background-color: #f5f5f5;
+    }
+
+    .bg-fill-white {
+        background-color: #fff;
+    }
+/*
+----- GROWL -----
+*/
+.growlNotifications {
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    z-index: 999; /*must be highest element on page*/
+}
+
+.growlNotification {
+    cursor: pointer;
+    opacity: 0;
+    position: absolute;
+    right: 1rem;
+    width: 21.5rem;
+    height: 5.5rem;
+    line-height: 1rem;
+    padding: .25rem;
+    border: .15rem solid rgba(250,250,250,.5);
+    border-radius: .2rem;
+    background-color: rgba(50, 50, 50, 0.75);
+    color: #fff;
+    font-size: .7rem;
+    font-family: 'Lato', sans-serif;
+    box-shadow: 0px 0px 15px -5px rgb(0, 0, 0);
+    transition: opacity 2s ease-out, top .5s ease-out, right .5s ease-out;
+}
+
+.notificationText {
+    font-weight: 400;
+
+}
+
+.notificationTitle {
+    font-weight: 700;
+    text-shadow: 1px 1px 4px rgba(100, 100, 100, 0.5);
+    font-size: .85rem;
+}
+
+.growlNotification.error {
+    background-color: rgba(206,10,10, 0.75);
+    border-color: rgba(206,10,10, 0.5);
+    color: #fff;
+}
+.growlNotification.error:hover {
+    border-color: rgba(206,10,10, 0.25);
+}
+.growlNotification.failure {
+    background-color: rgba(255, 113, 95, 0.75);
+    border-color: rgba(255, 113, 95, 0.5);
+    color: #000;
+}
+.growlNotification.failure:hover {
+    border-color: rgba(255, 113, 95, 0.25);
+}
+.growlNotification.warning {
+    background-color: rgba(255,238,112, 0.75);
+    border-color: rgba(255,238,112, 0.5);
+    color: #444;
+}
+.growlNotification.warning:hover {
+    border-color: rgba(255,238,112, 0.25);
+}
+.growlNotification.success {
+    background-color: rgba(83,181,106, 0.75);
+    border-color: rgba(83,181,106, 0.5);
+    color: #fff;
+}
+.growlNotification.success:hover {
+    border-color: rgba(83,181,106, 0.25);
+}
+.growlNotification.info {
+    background-color: rgba(0,121,193, 0.75);
+    border-color: rgba(0,121,193, 0.5);
+    color: #fff;
+}
+.growlNotification.info:hover {
+    border-color: rgba(0,121,193, 0.25);
+}
+.growlNotification.general {
+    background-color: rgba(50, 50, 50, 0.75);
+    border-color: rgba(50, 50, 50, 0.5);
+    color: #fff;
+}
+.growlNotification.general:hover {
+    border-color: rgba(50, 50, 50, 0.25);
+}
+.growlNotification.loading, .growlNotification.loadCompleted {
+    height: 1.5rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: #ddd;
+    border-width: 1px;
+    border-radius: 2px;
+    width: 10.75rem;
+    box-shadow: 0px 0px 5px -5px rgba(0, 0, 0, 0.5);
+}
+.growlNotification.loading .notificationTitle, .growlNotification.loadCompleted .notificationTitle {
+    text-shadow: none;
+    font-weight: 100;
+    color: #aaa;
+}
+.growlNotification.loading:hover {
+    border-color: #bbb;
+}
+.growlNotification.loadCompleted .icon {
+    background: url('../resources/check.svg') center center / .75rem .75rem no-repeat;
+}
+.growlNotification.loading .icon {
+    background: url('../resources/ajax-loader.gif') center center / .75rem .75rem no-repeat;
+}
+
+.growlNotification.is-opaque {
+    opacity: 1;
+}
+
+.growlNotification:hover {
+    border-color: rgba(250, 250, 250, 0.25);
+}
+
+.growlNotification.closed {
+    display: none;
+}
+
+.growlNotification .icon {
+    display: block;
+    float: left;
+    position: relative;
+    width: 1rem;
+    height: 1rem;
+}
+
+.growlNotification .closeNotification {
+    display: none;
+    position: absolute;
+    top: -.75rem;
+    right: -.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    border-radius: .75rem;
+    font-size: .75rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background: #444;
+}
+
+.growlNotification:hover .closeNotification {
+    display: block;
+}
+.growlNotification.closed:hover, .growlNotification:hover {
+    display: block;
+    opacity: 1;
+}
+
+
+
+.selectableList {
+    display: inline-block;
+    position: relative;
+    margin: 1em;
+}
+.selectableGroup {
+
+}
+.selectableGroupLabel {
+
+}
+.selectableGroupLabel {
+    cursor: default;
+    background-color: #cfcfcf;
+    font-size: .8rem;
+    font-weight: 700;
+    color: #000;
+    padding: 0 .5rem;
+}
+.dark .selectableGroupLabel {
+    background-color: #000;
+    color: #fff;
+}
+.selectableItem, .selectableGroupLabel{
+    min-width: 2.5rem;
+    height: 2rem;
+    line-height: 2rem;
+    text-align: left;
+    position: relative;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.selectableItem {
+    cursor: pointer;
+    background-color: #fbfbfb;
+    color: #444;
+    font-weight: 300;
+    font-size: .75rem;
+    border-bottom: .1rem solid #f0f0f0;
+    border-top: .1rem solid #ffffff;
+    padding: 0 2rem;
+}
+.dark .selectableItem {
+    color: #fff;
+    background-color: #444;
+    border-bottom: .1rem solid #383838;
+    border-top: .1rem solid #484848;
+}
+.selectableItem.selected {
+    background: #f5f5f5 url('../resources/check.svg') .25rem center / 1rem 1rem no-repeat;
+}
+.dark .selectableItem.selected {
+    background: #444 url('../resources/check.svg') .25rem center / 1rem 1rem no-repeat;
+}
+.selectableItem.selected:hover, .dark .selectableItem.selected:hover {
+    background: #ff9090 url('../resources/wrong.svg') .25rem center / .5rem .5rem no-repeat;
+}
+.selectableItem:hover {
+    background-color: #f0f0f0;
+}
+.dark .selectableItem:hover {
+    background-color: #333;
+}
+.selectableItem:first-of-type {
+    border-top: none;
+}
+.selectableItem:last-of-type {
+    border-bottom: none;
+}
+
+
+
+
+}

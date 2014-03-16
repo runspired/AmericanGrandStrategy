@@ -1,0 +1,147 @@
+.add-on-shift
+{
+    margin-top:1px !important;
+}
+
+.margin-top50
+{
+    margin-top:50px;
+}
+span.badge > .tooltip, span.label > .tooltip
+{
+    font-weight:normal;
+}
+.tooltip
+{
+    font-size:12px;
+}
+.tooltip.in {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+.tooltip-inner
+{
+    white-space:pre-wrap;
+}
+span.badge > a:link, span.badge > a:visited, span.badge > a:hover, span.badge > a:active { color:#fff; }
+td > a:hover[rel="tooltip"],
+td > a:active[rel="tooltip"]
+{
+    text-decoration: none;
+}
+
+.template-manager-modal {
+    width: 80%;
+    left: 10%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table th, .table .sms-status, .table .step-status {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+tr.wizard-entry-form > td > input, select {
+    margin-bottom: 0px;
+    vertical-align: middle !important;
+}
+
+input.required {
+    border-color: red;
+    background-color: lightpink;
+}
+
+.spinner.active {
+    cursor: progress;
+}
+
+.top-heading {
+    padding-top: 5px;
+    padding-left: 10px;
+    margin-top: 0px;
+}
+
+.video-container {
+    text-align: center;
+    background-color: #000;
+}
+
+body, html, #mainView {height: 100%}
+
+.signup-background {
+    background-color: rgb(120, 120, 120);
+}
+
+.center-column {
+    background-color: #ccc;
+    border-left: 1px solid #222;
+    border-right: 1px solid #222;
+    font-family: 'Droid Sans', Helvetica, Arial, sans-serif;
+    height: 100%;
+    -webkit-box-shadow: 0 0 3px 2px #666;
+    -moz-box-shadow: 0 0 3px 2px #666;
+    box-shadow: 0 0 3px 2px #666;
+}
+
+.phase {
+    padding: 0px;
+    margin: 0px;
+    background-color: #fff;
+}
+
+.progress {
+    margin: 0px;
+}
+
+.signup-container {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.signup-content-row {
+    padding-bottom: 10px;
+}
+
+.signup-start-span {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.signup-content-row .span-left {
+    padding-left: 10px;
+}
+
+.signup-seminar, .signup-login-info, .signup-personalization, .signup-dms-id {
+    background-color: #99c68e;
+    padding: 10px;
+    margin: 0px;
+    border-left: 8px solid #228b22;
+    -webkit-box-shadow: 0 0 2px 1px #666;
+    -moz-box-shadow: 0 0 2px 1px #666;
+    box-shadow: 0 0 2px 1px #666;
+}
+
+.signup-button-row {
+    border-top: 2px dashed #CCC;
+    padding-top: 10px;
+}
+
+.signup-button-row > div > a, .pop-upload, .start-pop-up-test {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+.signup-video-headline-row {
+    padding-left: 10px;
+}
+
+.pop-upload {
+    padding-top: 26px;
+    padding-bottom: 26px;
+}
+
+.popup-blocker-test-controls {
+    padding-left: 0px;
+    padding-right: 0px;
+}

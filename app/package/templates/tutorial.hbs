@@ -1,0 +1,109 @@
+<div class="progress">
+        <div class="progress-bar progress-bar-t2d-red" {{bind-attr style=progressCompletedWidth}}></div>
+        <div class="progress-bar progress-bar-t2d-yellow" {{bind-attr style=progressSingleWidth}}>
+            <span class="hidden-xs">{{currentSlideNumber}} / {{slideCount}}</span>
+        </div>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-3 col-xs-12 pull-right sidebar-header">
+            <img class="logoImg" src="resources/t2d_logo-300.png" alt="Text2Drive">
+            <span class="logoText">37483 (DRIVE)</span>
+        </div>
+
+        {{#carousel-component activeIndex=activeTab class="col-md-9"}}
+            {{#carousel-slide class="active"}}
+                <div class="container-fluid carousel-slide-header">
+                    <div class="row">
+                        <div class="col-md-9 col-xs-12">
+                            <h1>Hi {{model.firstName}},</h1>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-fluid">
+                    <div class="row bg-fill-white">
+                        <div class="col-md-12 bottom-buffer">
+                            <h2>
+                                {{{model.dealerName}}} is using <img class="inlineLogo" src="resources/t2d_logo-300.png" alt="Text2Drive">
+                            </h2>
+                        </div>
+                        <div class="col-md-5 bottom-buffer">
+                            <h3>
+                                <img class="inlineLogo" src="resources/t2d_logo-300.png" alt="Text2Drive"> connects you
+                                with your customers via
+                                text messages.
+                            </h3>
+                        </div>
+                        <div class="col-md-7 text-center bottom-buffer">
+                            <img class="col-md-10 illustrationPoint" src="resources/t2d_communication_system.png" alt="Text2Drive is a Mobile Communication Portal">
+                        </div>
+                    </div>
+                    <div class="row bg-fill-lightgrey drop-top text-center">
+                        <img class="col-md-3 bottom-buffer top-buffer" src="resources/t2d_setuptime.png">
+                        <h3 class="col-md-5 bottom-buffer top-buffer blue-text">
+                            Setup & Training will
+                            <br>take about 10 minutes
+                        </h3>
+                        <div class="col-md-4 bottom-buffer top-buffer">
+                            <a class="btn btn-primary btn-lg giantActionButton blue-button next" {{action "nextCarouselSlide" target="view.parentView"}}>Get Started!</a>
+                        </div>
+                    </div>
+                </div>
+            {{/carousel-slide}}
+            {{#carousel-slide}}
+                <div class="container-fluid carousel-slide-header">
+                    <div class="row">
+                        <div class="col-md-9 col-xs-12">
+                            <h1>Why Texting?</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row bg-fill-white">
+                        <a class="btn btn-primary btn-large pull-left previous backButton" {{action "previousCarouselSlide" target="view.parentView"}}>Go Back</a>
+                    </div>
+                    <div class="row bg-fill-white">
+                        <div class="col-md-12 bottom-buffer">
+                            <h3 class="blue-text">Easier & Faster</h3>
+                            <p>Lorem Ipsum Dolor Sic Etiam Arma Virumque Cano, Troiae Qui Primus Ab Oris.</p>
+                        </div>
+                        <div class="col-md-12 bottom-buffer">
+                            <h3 class="blue-text">More Polite</h3>
+                            <p>Lorem Ipsum Dolor Sic Etiam Arma Virumque Cano, Troiae Qui Primus Ab Oris.</p>
+                        </div>
+                        <div class="col-md-12 bottom-buffer">
+                            <h3 class="blue-text">Makes You Money</h3>
+                            <p>Lorem Ipsum Dolor Sic Etiam Arma Virumque Cano, Troiae Qui Primus Ab Oris.</p>
+                        </div>
+                        <div class="col-md-12 bottom-buffer">
+                            <a class="btn btn-primary btn-large pull-right next blue-button continueButton" {{action "nextCarouselSlide" target="view.parentView"}}>Continue</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+            {{/carousel-slide}}
+            {{#carousel-slide}}
+                <div class="container-fluid carousel-slide-header">
+                    <div class="row">
+                        <div class="col-md-9 col-xs-12">
+                            <h1>Confirm Your Information</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-fluid">
+                    <div class="row bg-fill-white">
+                        <a class="btn btn-primary btn-large pull-left previous backButton" {{action "previousCarouselSlide" target="view.parentView"}}>Go Back</a>
+                    </div>
+                </div>
+            {{/carousel-slide}}
+        {{/carousel-component}}
+
+        <div class="col-md-3 col-xs-12 pull-right sidebar text-center">
+            <a class="btn btn-primary btn-large live-support-button top-buffer bottom-buffer">Live Support</a>
+        </div>
+    </div>
+</div>
