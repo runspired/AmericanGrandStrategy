@@ -1,7 +1,7 @@
-AGS.Slide = Ember.Object.extend({
+AGS.Slide = DS.Model.extend({
 
-    prompt : '',
-    text : '',
-    category : ''
+    prompt : DS.attr(''),
+    text : DS.attr(''),
+    category : DS.attr('')
 
 });

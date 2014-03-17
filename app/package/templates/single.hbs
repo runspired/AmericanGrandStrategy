@@ -1,0 +1,22 @@
+<div class="container-fluid top-buffer">
+    <div class="row">
+        <div class="col-md-9 markdown">
+            <h1>{{{model.prompt}}}</h1>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-9 markdown">
+            {{{markdown model.text}}}
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-md-9">
+            {{{model.category}}}
+        </div>
+    </div>
+    <div class="row top-buffer bottom-buffer">
+        {{#link-to 'slide.edit' slide}}Edit{{/link-to}}
+    </div>
+</div>

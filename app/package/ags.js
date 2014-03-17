@@ -6,6 +6,7 @@
     /*global Ember, window*/
 
     //initialize the App
+
     var AGS = window.AGS = Ember.Application.create({
         LOG_TRANSITIONS: true,
         LOG_BINDINGS: true,

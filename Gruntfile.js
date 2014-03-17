@@ -145,6 +145,7 @@ module.exports = function (grunt) {
             all: {
                 dest: 'app/dist/<%= config.scripts %>/bower-components.js',
                 mainFiles: {
+                    'showdown': 'compressed/showdown.js'
                 },
                 exclude: [
                     // 'jquery',

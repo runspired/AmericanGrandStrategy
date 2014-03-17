@@ -1,8 +1,8 @@
 /*global require, AGS */
 
-require('external/firebase');
-require('external/emberfire-latest');
-require('external/firebase-simple-login');
+require('../external/firebase');
+require('../external/emberfire-latest');
+require('../external/firebase-simple-login');
 
 require('ags');
 require('router');

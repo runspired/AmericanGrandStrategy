@@ -4,9 +4,16 @@
 
     var App = this;
 
-    App.TutorialController = Ember.Controller.extend({
+    App.SlideListController = Ember.Controller.extend({
+
+        queryParams : ['activeTab'],
         activeTab : 0,
-        slideCount : 12,
+
+        activeObserver : function () {console.log('changed to', this.get('activeTab'));}.observes('activeTab'),
+
+        slideCount : function () {
+            return this.get('model.length') + 1;
+        }.property('model.@each'),
 
         progressCompletedWidth : function () {
             return "width: " + ((this.get('activeTab')) / this.get('slideCount') * 100) + "%";
@@ -21,14 +28,14 @@
         }.property('activeTab').readOnly()
     });
 
-    App.TutorialView = App.View.extend({
+    App.SlideListView = App.View.extend({
         viewName : 'slides',
-        classNames : ['signup-container']
+        templateName : 'slides'
     });
 
-    App.TutorialRoute = App.Route.extend({
+    App.SlideListRoute = App.Route.extend({
         model : function () {
-            return DS.findAll('slide');
+            return this.get('store').findAll('slide');
         }
     });
 

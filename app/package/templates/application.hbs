@@ -1,8 +1,9 @@
 {{outlet}}
-<div class="container-fluid">
+<div class="container-fluid top-buffer bottom-buffer">
     <div class="row">
         <div class="col-md-12">
-            {{#link-to 'create' className="btn btn-primary btn-lg continueButton"}}Create New Slide{{/link-to}}
+            {{#link-to 'slide.list' class="btn btn-primary btn-large pull-left blue-button"}}View Slides{{/link-to}}
+            {{#link-to 'slide.create' class="btn btn-primary btn-large pull-right blue-button"}}Create New Slide{{/link-to}}
         </div>
     </div>
 </div>
